@@ -7,15 +7,12 @@
             <h1><a href="">Dog on bike</a></h1>
         </div>
 
-        <div>
-            <h2><a href="">My first post</a></h2>
-            <p>lets see what happens if i write here </p>
-        </div>
-
-        <div>
-
-            <h2><a href="">Posting stuff</a></h2>
-            <p> spring is almost here</p>
-        </div>
+        {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaks }}</p>
+          </div>
+      {% endfor %}
     </body>
 </html>
